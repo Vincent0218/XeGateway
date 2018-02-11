@@ -13,11 +13,16 @@ namespace XeGateway
 
             // Web API routes
             config.MapHttpAttributeRoutes();
+            //config.Routes.MapHttpRoute(
+            //    name: "Xe",
+            //    routeTemplate: "api/Exchange/XeSources/{id}",
+            //    defaults: new { controller = "XeSources", id = RouteParameter.Optional }
+            //);
 
             config.Routes.MapHttpRoute(
-                name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
+                name: "Conversion",
+                routeTemplate: "api/Exchange/XeSources/{SourceId}/Conversions",
+                defaults: new { controller = "Conversions" }
             );
         }
     }

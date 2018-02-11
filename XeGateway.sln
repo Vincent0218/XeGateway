@@ -3,9 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.15
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XeGateway", "XeGateway\XeGateway.csproj", "{05C1EA3E-5CC0-4C3C-891B-2718B44B0372}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XeGateway.Web", "XeGateway\XeGateway.Web.csproj", "{05C1EA3E-5CC0-4C3C-891B-2718B44B0372}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XeGateway.Tests", "XeGateway.Tests\XeGateway.Tests.csproj", "{1DC83CDA-C6D1-4ABC-BA6F-C58278E00FE4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XeGateway.Web.Tests", "XeGateway.Tests\XeGateway.Web.Tests.csproj", "{1DC83CDA-C6D1-4ABC-BA6F-C58278E00FE4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xe.Gateway.Contract", "Xe.Gateway.Data\Xe.Gateway.Contract.csproj", "{92AA9618-853B-486C-AFAB-6B1532751A27}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XeGateWay.Domain", "XeGateWay.Domain\XeGateWay.Domain.csproj", "{BCDBAB7F-A011-4081-B42A-C9FB36AEC08F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XeGateway.Data.EFRepository", "XeGateway.Data.EFRepository\XeGateway.Data.EFRepository.csproj", "{57BF5A17-9751-4AB8-8324-2C7081D9640B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XeGateway.Data.EFRepository.Test", "XeGateway.Data.EFRepository.Test\XeGateway.Data.EFRepository.Test.csproj", "{23C6A040-5EFE-4DC2-A6BD-0C39197C932E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +29,22 @@ Global
 		{1DC83CDA-C6D1-4ABC-BA6F-C58278E00FE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1DC83CDA-C6D1-4ABC-BA6F-C58278E00FE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1DC83CDA-C6D1-4ABC-BA6F-C58278E00FE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92AA9618-853B-486C-AFAB-6B1532751A27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92AA9618-853B-486C-AFAB-6B1532751A27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92AA9618-853B-486C-AFAB-6B1532751A27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92AA9618-853B-486C-AFAB-6B1532751A27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCDBAB7F-A011-4081-B42A-C9FB36AEC08F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCDBAB7F-A011-4081-B42A-C9FB36AEC08F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCDBAB7F-A011-4081-B42A-C9FB36AEC08F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCDBAB7F-A011-4081-B42A-C9FB36AEC08F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57BF5A17-9751-4AB8-8324-2C7081D9640B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57BF5A17-9751-4AB8-8324-2C7081D9640B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57BF5A17-9751-4AB8-8324-2C7081D9640B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57BF5A17-9751-4AB8-8324-2C7081D9640B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23C6A040-5EFE-4DC2-A6BD-0C39197C932E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23C6A040-5EFE-4DC2-A6BD-0C39197C932E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23C6A040-5EFE-4DC2-A6BD-0C39197C932E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23C6A040-5EFE-4DC2-A6BD-0C39197C932E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
