@@ -2,6 +2,8 @@
 using System.Web.Http;
 using XeGateway.ApplicationManager;
 using XeGateWay.Domain;
+using System.Linq;
+using XeGateway.Models;
 
 namespace XeGateway.Controllers
 {
@@ -9,32 +11,53 @@ namespace XeGateway.Controllers
     /// <summary>
     /// Xe ( currency) Source // XE , Yahoo 
     /// </summary>
-    public class XeSourcesController : ApiController
+    public class XeSourcesController : BaseAPIController
     {
-        private readonly ISourceManager _sourceManager;
+
         public XeSourcesController()
         {
-            _sourceManager = new SourceManager();
+
+        }
+
+        /// <summary>
+        /// Get list of all Exchange providers 
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<XeGatewaySourceModel> Get()
+        {
+            return TheSourceManager.GetSource().Select(m => TheModelFacctory.Create(m));
         }
 
         /// <summary>
         /// 
         /// </summary>
+        /// <param name="Sourceid"></param>
         /// <returns></returns>
-        public IEnumerable<XeGatewaySource> Get()
+        public XeGatewaySourceModel Get(int Sourceid)
         {
-            return _sourceManager.GetSource();
+            return TheModelFacctory.Create(TheSourceManager.GetSourceById(Sourceid));
         }
 
 
-        public XeGatewaySource Get(int id)
-        {
-            return _sourceManager.GetSourceById(id);
-        }
-
+        
+        /// <summary>
+        /// Create Should have Authantication  , Create a new Source , Service provider for currency exchange rate , 
+        /// </summary>
+        /// <param name="value"></param>
         public void Post([FromBody]string value)
         {
+
+
         }
+
+        /// <summary>
+        ///  Update  
+        /// </summary>
+        /// <param name="value"></param>
+        public void Put([FromBody]string value)
+        {
+        }
+
 
 
     }

@@ -9,8 +9,8 @@ namespace XeGateway.Models
     {
         public Dictionary<string, string> AdditionalParam { get; set; }
 
-        public int CurrencyCodeFrom { get; set; }
-        public int CurrencyCodeTo { get; set; }
+        public string CurrencyCodeFrom { get; set; }
+        public string CurrencyCodeTo { get; set; }
         public Double Amount { get; set; }
 
         private DateTime? _OnDate = null;

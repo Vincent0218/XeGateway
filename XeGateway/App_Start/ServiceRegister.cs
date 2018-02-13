@@ -16,7 +16,7 @@ namespace XeGateway.App_Start
         //TODO DI 
         public static void RegisterAll()
         {
-            _sourceManager.GetSource();
+          //  _sourceManager.GetSource();
            // ServiceLocator.AddService<>
         }
         public static void Register()

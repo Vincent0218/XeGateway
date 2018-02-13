@@ -20,8 +20,7 @@ namespace XeGateway.Data.EFRepository.Test
                 
             });
             unitOfWork.Compleate();
-
-
+            
         }
     }
 }

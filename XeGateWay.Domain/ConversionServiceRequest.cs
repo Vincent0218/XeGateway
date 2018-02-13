@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace XeGateWay.Domain
 {
-    public class ConversionServiceRequestBase
+    public class ConversionServiceRequest
     {
 
-        public ConversionServiceRequestBase()
+        public ConversionServiceRequest()
         {
             AdditionalParam = new Dictionary<string, string>();
         }

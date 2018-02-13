@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Xe.Gateway.data.Contract;
 using XeGateWay.Domain;
 
@@ -25,7 +26,7 @@ namespace XeGateway.Data.EFRepository
 
         public IEnumerable<XeGatewaySource> getAll()
         {
-            throw new NotImplementedException();
+          return  _ctx.Source.ToList();
         }
 
         public void Remove(XeGatewaySource src)

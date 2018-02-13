@@ -40,7 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConversionServiceRequestBase.cs" />
+    <Compile Include="ConversionServiceRequest.cs" />
     <Compile Include="ConversionServiceResponse.cs" />
     <Compile Include="XeGatewaySource.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

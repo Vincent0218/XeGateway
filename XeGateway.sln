@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XeGateway.Data.EFRepository
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XeGateway.Data.EFRepository.Test", "XeGateway.Data.EFRepository.Test\XeGateway.Data.EFRepository.Test.csproj", "{23C6A040-5EFE-4DC2-A6BD-0C39197C932E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NodeServer-CurrencyConversion", "NodeServer-CurrencyConversion", "{B1CA4FCE-48C4-4133-80E9-976C1E9D811A}"
+EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "NodeWeb", "NodeWeb\NodeWeb.njsproj", "{35BF8A61-AC28-41BD-B32E-E21C30823F91}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,8 +49,15 @@ Global
 		{23C6A040-5EFE-4DC2-A6BD-0C39197C932E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{23C6A040-5EFE-4DC2-A6BD-0C39197C932E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{23C6A040-5EFE-4DC2-A6BD-0C39197C932E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35BF8A61-AC28-41BD-B32E-E21C30823F91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35BF8A61-AC28-41BD-B32E-E21C30823F91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35BF8A61-AC28-41BD-B32E-E21C30823F91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35BF8A61-AC28-41BD-B32E-E21C30823F91}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{35BF8A61-AC28-41BD-B32E-E21C30823F91} = {B1CA4FCE-48C4-4133-80E9-976C1E9D811A}
 	EndGlobalSection
 EndGlobal
