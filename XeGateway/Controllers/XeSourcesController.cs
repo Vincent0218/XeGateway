@@ -1,15 +1,14 @@
 ﻿using System.Collections.Generic;
 using System.Web.Http;
-using XeGateway.ApplicationManager;
-using XeGateWay.Domain;
 using System.Linq;
 using XeGateway.Models;
+using System.Net.Http;
 
 namespace XeGateway.Controllers
 {
 
     /// <summary>
-    /// Xe ( currency) Source // XE , Yahoo 
+    /// Xe ( currency) Source // XE , Yahoo , seed this 
     /// </summary>
     public class XeSourcesController : BaseAPIController
     {
@@ -41,21 +40,26 @@ namespace XeGateway.Controllers
 
         
         /// <summary>
-        /// Create Should have Authantication  , Create a new Source , Service provider for currency exchange rate , 
+        /// TODO
+        /// Create Should have Authantication  or could be done through script seed new data  , Create a new Source , Service provider for currency exchange rate , 
+        /// for now this in not allowed returning 405 
         /// </summary>
         /// <param name="value"></param>
-        public void Post([FromBody]string value)
+        public HttpResponseMessage Post([FromBody]string value)
         {
-
+            return Request.CreateResponse(System.Net.HttpStatusCode.MethodNotAllowed);
 
         }
 
         /// <summary>
-        ///  Update  
+        /// TODO
+        /// Create Should have Authantication  or could be done through script seed new data  , Create a new Source , Service provider for currency exchange rate , 
+        /// for now this in not allowed returning 405 
         /// </summary>
         /// <param name="value"></param>
-        public void Put([FromBody]string value)
+        public HttpResponseMessage Put([FromBody]string value)
         {
+            return Request.CreateResponse(System.Net.HttpStatusCode.MethodNotAllowed);
         }
 
 

@@ -1,5 +1,4 @@
-﻿using System;
-namespace Xe.Gateway.data.Contract
+﻿namespace Xe.Gateway.data.Contract
 {
     public interface IUnitOfWork
     {

@@ -4,7 +4,7 @@
   "description": "NodeWeb",
   "main": "server.js",
   "author": {
-    "name": "e3018814"
+    "name": "Paritoshr"
   },
   "dependencies": {
     "ejs": "^2.5.7",

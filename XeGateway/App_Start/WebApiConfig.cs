@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web.Http;
+﻿using System.Web.Http;
 
 namespace XeGateway
 {
@@ -13,12 +10,16 @@ namespace XeGateway
 
             // Web API routes
             config.MapHttpAttributeRoutes();
+
+            // Exchange source Resource Rout 
             config.Routes.MapHttpRoute(
                 name: "XeSource",
                 routeTemplate: "api/Exchange/XeSources/{Sourceid}",
                 defaults: new { controller = "XeSources", Sourceid = RouteParameter.Optional }
             );
 
+
+            //Functional Route 
             config.Routes.MapHttpRoute(
                 name: "Conversion",
                 routeTemplate: "api/Exchange/XeSources/{SourceId}/Conversions/{Action}",
