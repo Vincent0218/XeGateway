@@ -2,6 +2,9 @@
 using System.Web.Mvc;
 using System.Web.Routing;
 using XeGateway.App_Start;
+using XeGateway.ApplicationManager;
+using XeGateway.Ioc;
+using Unity;
 
 namespace XeGateway
 {
@@ -9,14 +12,17 @@ namespace XeGateway
     {
         protected void Application_Start()
         {
-            AreaRegistration.RegisterAllAreas();
+            AreaRegistration.RegisterAllAreas();           
             GlobalConfiguration.Configure(WebApiConfig.Register);
+            var unityContainer = UnityConfiguration.Configure(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-           
+            
+            var sourceManager = unityContainer.Resolve<ISourceManager>();
             // 
-            //Cash Service  for Service lookup 
-            ServiceRegister.RegisterAll();
+            //Cash Service  for Service lookup         
+            ServiceRegister.Register(sourceManager);
+            
         }
     }
 }

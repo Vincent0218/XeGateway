@@ -19,14 +19,18 @@ namespace XeGateway.Data.EFRepository
             _ctx.Source.Add(src);
         }
 
-        public XeGatewaySource get(Int64 id)
+        public XeGatewaySource Get(Int64 id)
         {
-           return _ctx.Source.SingleOrDefault(x => x.Id == id);
+           return _ctx.Source.SingleOrDefault(x => x.Id == id && x.Active == true);
+        }
+        public XeGatewaySource GetByName(string name)
+        {
+            return _ctx.Source.SingleOrDefault(x => x.Name == name);
         }
 
-        public IEnumerable<XeGatewaySource> getAll()
+        public IEnumerable<XeGatewaySource> GetAll()
         {
-          return  _ctx.Source.ToList();
+          return  _ctx.Source.Where(x=>x.Active==true).ToList();
         }
 
         public void Remove(XeGatewaySource src)

@@ -7,9 +7,10 @@ namespace Xe.Gateway.data.Contract
     public interface IXeSourceRepository
     {
         void Add(XeGatewaySource src);
-        XeGatewaySource get(Int64 Id);
-        IEnumerable<XeGatewaySource> getAll();
+        XeGatewaySource Get(Int64 Id);
+        IEnumerable<XeGatewaySource> GetAll();
         void Remove(XeGatewaySource src);
         void Update(XeGatewaySource src);
+        XeGatewaySource GetByName(string name);
     }
 }

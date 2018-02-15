@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XeGateway.Web", "XeGateway\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XeGateway.Web.Tests", "XeGateway.Tests\XeGateway.Web.Tests.csproj", "{1DC83CDA-C6D1-4ABC-BA6F-C58278E00FE4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xe.Gateway.Contract", "Xe.Gateway.Data\Xe.Gateway.Contract.csproj", "{92AA9618-853B-486C-AFAB-6B1532751A27}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XeGateway.Contract", "Xe.Gateway.Data\XeGateway.Contract.csproj", "{92AA9618-853B-486C-AFAB-6B1532751A27}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XeGateWay.Domain", "XeGateWay.Domain\XeGateWay.Domain.csproj", "{BCDBAB7F-A011-4081-B42A-C9FB36AEC08F}"
 EndProject
@@ -23,6 +23,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Resource", "Resource", "{32
 	ProjectSection(SolutionItems) = preProject
 		..\..\..\..\Desktop\GetALL.jpg = ..\..\..\..\Desktop\GetALL.jpg
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xe.Gateway.ServiceInterface.Yahoo", "Xe.Gateway.ServiceInterface.Yahoo\Xe.Gateway.ServiceInterface.Yahoo.csproj", "{7DE73B04-C192-49FE-9326-8A7D2B90C1A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xe.Gateway.ServiceInterface.Oanda", "Xe.Gateway.ServiceInterface.Oanda\Xe.Gateway.ServiceInterface.Oanda.csproj", "{1468BE1D-A350-42C2-B602-74BCE76CD2F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xegateway.Application", "Xegateway.Application\Xegateway.Application.csproj", "{719A235E-F8CD-4729-9CFC-E63E1A0AA3CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XeGateway.Application.Test", "XeGateway.Application.Test\XeGateway.Application.Test.csproj", "{9B83212B-16AF-4E8A-8F53-8343BF895BA4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -58,6 +66,22 @@ Global
 		{35BF8A61-AC28-41BD-B32E-E21C30823F91}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{35BF8A61-AC28-41BD-B32E-E21C30823F91}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{35BF8A61-AC28-41BD-B32E-E21C30823F91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DE73B04-C192-49FE-9326-8A7D2B90C1A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DE73B04-C192-49FE-9326-8A7D2B90C1A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DE73B04-C192-49FE-9326-8A7D2B90C1A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DE73B04-C192-49FE-9326-8A7D2B90C1A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1468BE1D-A350-42C2-B602-74BCE76CD2F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1468BE1D-A350-42C2-B602-74BCE76CD2F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1468BE1D-A350-42C2-B602-74BCE76CD2F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1468BE1D-A350-42C2-B602-74BCE76CD2F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{719A235E-F8CD-4729-9CFC-E63E1A0AA3CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{719A235E-F8CD-4729-9CFC-E63E1A0AA3CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{719A235E-F8CD-4729-9CFC-E63E1A0AA3CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{719A235E-F8CD-4729-9CFC-E63E1A0AA3CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B83212B-16AF-4E8A-8F53-8343BF895BA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B83212B-16AF-4E8A-8F53-8343BF895BA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B83212B-16AF-4E8A-8F53-8343BF895BA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B83212B-16AF-4E8A-8F53-8343BF895BA4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using Xe.Gateway.data.Contract;
-using XeGateway.Data.EFRepository;
 using XeGateWay.Domain;
 
 namespace XeGateway.ApplicationManager
@@ -18,22 +17,31 @@ namespace XeGateway.ApplicationManager
         
         public SourceManager(IUnitOfWork unitOfWork)
         {
-            _unitOfWork = unitOfWork;//new UnitOfWork(new SqlDBContext());
+            _unitOfWork = unitOfWork;
         }
         public IEnumerable<XeGatewaySource> GetSource()
         {
-            return _unitOfWork.XeSourceRepository.getAll();
+            return _unitOfWork.XeSourceRepository.GetAll();
         }
 
         public XeGatewaySource GetSourceById(Int64 Id)
         {
-            return _unitOfWork.XeSourceRepository.get(Id);
+            return _unitOfWork.XeSourceRepository.Get(Id);
+        }
+        public XeGatewaySource GetSourceByName(string name)
+        {
+            return _unitOfWork.XeSourceRepository.GetByName(name);
         }
 
-        public void UpdateSource(XeGatewaySource Update)
+        public void AddSource(XeGatewaySource source)
         {
-            var source = _unitOfWork.XeSourceRepository.get(Update.Id);
-            source = Update;
+             _unitOfWork.XeSourceRepository.Add(source);
+        }
+
+        public void UpdateSource(XeGatewaySource update)
+        {
+            var source = _unitOfWork.XeSourceRepository.Get(update.Id);
+            source = update;
           
             _unitOfWork.Compleate();
         }

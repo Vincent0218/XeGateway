@@ -5,8 +5,12 @@ using System.Web;
 
 namespace XeGateway.Models
 {
-    public class ConversionRequest
+    public class ConversionRequestModel
     {
+
+        /// <summary>
+        /// Additional Param , JSON this can be parsed by Service Integration With Different Sources 
+        /// </summary>
         public Dictionary<string, string> AdditionalParam { get; set; }
 
         public string CurrencyCodeFrom { get; set; }
@@ -22,9 +26,7 @@ namespace XeGateway.Models
         {
             get
             {
-                return _OnDate.HasValue
-                   ? _OnDate.Value
-                   : DateTime.Now;
+                return _OnDate ?? DateTime.Now;
             }
 
             set { _OnDate = value; }

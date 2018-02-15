@@ -174,11 +174,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Application\AuthanticationService.cs" />
-    <Compile Include="Application\IAuthanticationService.cs" />
-    <Compile Include="Application\ISourceManager.cs" />
-    <Compile Include="Application\ServiceLocator.cs" />
-    <Compile Include="Application\SourceManager.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\ServiceRegister.cs" />
@@ -190,9 +185,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Ioc\UnityConfiguration.cs" />
     <Compile Include="Ioc\UnityResolver.cs" />
-    <Compile Include="Models\ConversionRequest.cs" />
-    <Compile Include="Models\ConversionResponse.cs" />
+    <Compile Include="Models\ConversionRequestModel.cs" />
+    <Compile Include="Models\ConversionResponseModel.cs" />
     <Compile Include="Models\ModelFactory.cs" />
     <Compile Include="Models\XeGatewaySourceModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -215,14 +211,28 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Application\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Xe.Gateway.Data\Xe.Gateway.Contract.csproj">
+    <ProjectReference Include="..\Xe.Gateway.Data\XeGateway.Contract.csproj">
       <Project>{92aa9618-853b-486c-afab-6b1532751a27}</Project>
-      <Name>Xe.Gateway.Contract</Name>
+      <Name>XeGateway.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Xe.Gateway.ServiceInterface.Oanda\Xe.Gateway.ServiceInterface.Oanda.csproj">
+      <Project>{1468BE1D-A350-42C2-B602-74BCE76CD2F1}</Project>
+      <Name>Xe.Gateway.ServiceInterface.Oanda</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Xe.Gateway.ServiceInterface.Yahoo\Xe.Gateway.ServiceInterface.Yahoo.csproj">
+      <Project>{7DE73B04-C192-49FE-9326-8A7D2B90C1A0}</Project>
+      <Name>Xe.Gateway.ServiceInterface.Yahoo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Xegateway.Application\Xegateway.Application.csproj">
+      <Project>{719a235e-f8cd-4729-9cfc-e63e1a0aa3cc}</Project>
+      <Name>Xegateway.Application</Name>
     </ProjectReference>
     <ProjectReference Include="..\XeGateway.Data.EFRepository\XeGateway.Data.EFRepository.csproj">
       <Project>{57bf5a17-9751-4ab8-8324-2c7081d9640b}</Project>

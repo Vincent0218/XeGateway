@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{92AA9618-853B-486C-AFAB-6B1532751A27}</ProjectGuid>
+    <ProjectGuid>{719A235E-F8CD-4729-9CFC-E63E1A0AA3CC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Xe.Gateway.Data</RootNamespace>
-    <AssemblyName>Xe.Gateway.Data</AssemblyName>
+    <RootNamespace>Xegateway.Application</RootNamespace>
+    <AssemblyName>Xegateway.Application</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,11 +40,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AuthanticationService.cs" />
+    <Compile Include="IAuthanticationService.cs" />
+    <Compile Include="ISourceManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="IXeSourceRepository.cs" />
-    <Compile Include="IUnitOfWork.cs" />
+    <Compile Include="ServiceLocator.cs" />
+    <Compile Include="SourceManager.cs" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Xe.Gateway.Data\XeGateway.Contract.csproj">
+      <Project>{92aa9618-853b-486c-afab-6b1532751a27}</Project>
+      <Name>XeGateway.Contract</Name>
+    </ProjectReference>
     <ProjectReference Include="..\XeGateWay.Domain\XeGateWay.Domain.csproj">
       <Project>{bcdbab7f-a011-4081-b42a-c9fb36aec08f}</Project>
       <Name>XeGateWay.Domain</Name>

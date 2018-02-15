@@ -18,6 +18,7 @@ namespace XeGateway
             container.RegisterType<ISourceManager, SourceManager>();
             container.RegisterType<IUnitOfWork, UnitOfWork>();
             container.RegisterType<SqlDBContext, SqlDBContext>();
+           
             config.DependencyResolver = new UnityResolver(container);
 
             // Web API routes

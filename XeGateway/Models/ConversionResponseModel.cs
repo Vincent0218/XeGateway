@@ -5,7 +5,7 @@ using System.Web;
 
 namespace XeGateway.Models
 {
-    public class ConversionResponse
+    public class ConversionResponseModel
     {
         public string CurrencyCodeFrom { get; set; }
         public string CurrencyCodeTo { get; set; }
@@ -20,9 +20,7 @@ namespace XeGateway.Models
         {
             get
             {
-                return _OnDate.HasValue
-                   ? _OnDate.Value
-                   : DateTime.Now;
+                return _OnDate ?? DateTime.Now;
             }
 
             set { _OnDate = value; }

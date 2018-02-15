@@ -13,8 +13,8 @@ namespace XeGateWay.Domain
 
         public Dictionary<string,string> AdditionalParam { get; set; }
 
-        public int CurrencyCodeFrom { get; set; }
-        public int CurrencyCodeTo { get; set; }
+        public string CurrencyCodeFrom { get; set; }
+        public string CurrencyCodeTo { get; set; }
         public Double Amount { get; set; }
 
         private DateTime? _OnDate = null;
@@ -26,9 +26,7 @@ namespace XeGateWay.Domain
         {
             get
             {
-                return _OnDate.HasValue
-                   ? _OnDate.Value
-                   : DateTime.Now;
+                return _OnDate ?? DateTime.Now;
             }
 
             set { _OnDate = value; }

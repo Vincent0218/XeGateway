@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace XeGateway.Application
+﻿namespace XeGateway.Application
 {
     public class AuthanticationService : IAuthanticationService
     {

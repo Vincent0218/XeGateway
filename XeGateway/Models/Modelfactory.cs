@@ -18,14 +18,14 @@ namespace XeGateway.Models
 
         public XeGatewaySourceModel Create(XeGatewaySource Source)
         {
-            Dictionary<string, string>_actions = new Dictionary<string, string>();
-
-            _actions.Add("GetConversion", _helper.Link("Conversion", new { SourceId = Source.Id, Action  = "GetConversion" }));
-            _actions.Add("GetCurrencyCodes", _helper.Link("Conversion", new { SourceId = Source.Id, Action = "GetCurrencyCodes" }));
-
+            Dictionary<string, string> _actions = new Dictionary<string, string>
+            {
+                { "GetConversion", _helper.Link("Conversion", new { SourceId = Source.Id, Action = "GetConversion" }) },
+                { "GetCurrencyCodes", _helper.Link("Conversion", new { SourceId = Source.Id, Action = "GetCurrencyCodes" }) }
+            };
             return new XeGatewaySourceModel()
             {
-                Url = _helper.Link("XeSource",new { Sourceid = Source.Id}),
+                Url = _helper.Link("XeSource", new { Sourceid = Source.Id }),
                 Active = Source.Active,
                 AdditionalParms = Source.AdditionalParms,
                 Endpoint = Source.Endpoint,
@@ -35,6 +35,13 @@ namespace XeGateway.Models
             };
         }
 
+        public ConversionResponseModel Create(ConversionServiceResponse req)
+        {
+            return new ConversionResponseModel()
+            {
+
+            };
+        }
 
         public XeGatewaySource Parse(XeGatewaySourceModel SourceModel)
         {

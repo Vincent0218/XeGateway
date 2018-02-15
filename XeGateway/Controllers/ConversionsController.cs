@@ -2,6 +2,7 @@
 using XeGateway.Models;
 using System;
 using System.Collections.Generic;
+using XeGateway.ApplicationManager;
 
 namespace XeGateway.Controllers
 {
@@ -10,18 +11,29 @@ namespace XeGateway.Controllers
     /// <summary>
     /// Functoinal API
     /// </summary>
-    public class ConversionsController : ApiController
+    public class ConversionsController : BaseAPIController
     {
-        // GET: api/Exchange/XeSources/{SourceId}/Conversions/GetConversion
-        public ConversionResponse GetConversion(Int64 SourceId, ConversionRequest req)
+
+        public ConversionsController(ISourceManager sourceManager) : base(sourceManager)
         {
-            return new ConversionResponse()
+
+        }
+
+        // GET: api/Exchange/XeSources/{SourceId}/Conversions/GetConversion
+        public ConversionResponseModel GetConversion(Int64 SourceId, ConversionRequestModel req)
+        {
+            var source = TheSourceManager.GetSourceById(SourceId);
+            var conversionService = ServiceLocator.GetServiceByName(source.Name);
+            var response = conversionService.Convert(new XeGateWay.Domain.ConversionServiceRequest()
             {
-                Amount = 200,
-                CurrencyCodeFrom = "USD",
-                CurrencyCodeTo = "INR",
-                OnDate = System.DateTime.Now
-            };
+                AdditionalParam = req.AdditionalParam,
+                Amount = req.Amount,
+                CurrencyCodeFrom = req.CurrencyCodeFrom,
+                CurrencyCodeTo = req.CurrencyCodeTo,
+                OnDate = req.OnDate
+            }
+                     );
+            return TheModelFacctory.Create(response);
         }
 
         // GET: api/Exchange/XeSources/{SourceId}/Conversions/GetCountryCodes
