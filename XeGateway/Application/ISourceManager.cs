@@ -10,5 +10,7 @@ namespace XeGateway.ApplicationManager
     {
         IEnumerable<XeGatewaySource> GetSource();
         XeGatewaySource GetSourceById(Int64 Id);
+
+        void UpdateSource(XeGatewaySource update);
     }
 }

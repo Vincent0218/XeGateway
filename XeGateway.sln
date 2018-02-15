@@ -19,6 +19,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NodeServer-CurrencyConversi
 EndProject
 Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "NodeWeb", "NodeWeb\NodeWeb.njsproj", "{35BF8A61-AC28-41BD-B32E-E21C30823F91}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Resource", "Resource", "{328997B5-471E-4AA4-ABF4-A412C397DC50}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\Desktop\GetALL.jpg = ..\..\..\..\Desktop\GetALL.jpg
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

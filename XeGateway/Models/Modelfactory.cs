@@ -30,9 +30,22 @@ namespace XeGateway.Models
                 AdditionalParms = Source.AdditionalParms,
                 Endpoint = Source.Endpoint,
                 Name = Source.Name,
-                Actions = _actions
+                Actions = _actions,
+                Id = Source.Id
             };
         }
 
+
+        public XeGatewaySource Parse(XeGatewaySourceModel SourceModel)
+        {
+            return new XeGatewaySource()
+            {
+                Id = SourceModel.Id,
+                Active = SourceModel.Active,
+                AdditionalParms = SourceModel.AdditionalParms,
+                Endpoint = SourceModel.Endpoint,
+                Name = SourceModel.Name
+            };
+        }
     }
 }

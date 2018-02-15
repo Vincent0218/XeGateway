@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ISqlDBContext.cs" />
     <Compile Include="Migrations\201802071000509_init.cs" />
     <Compile Include="Migrations\201802071000509_init.Designer.cs">
       <DependentUpon>201802071000509_init.cs</DependentUpon>

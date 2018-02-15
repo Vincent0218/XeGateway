@@ -15,11 +15,6 @@ namespace XeGateway.Data.EFRepository
             XeSourceRepository = new XeSourceRepository(_context);
         }
 
-        public void Save()
-        {
-            _context.SaveChanges();
-        }
-
         public void Compleate()
         {
             _context.SaveChanges();

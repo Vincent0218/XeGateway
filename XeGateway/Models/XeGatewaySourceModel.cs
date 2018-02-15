@@ -11,7 +11,7 @@ namespace XeGateway.Models
         public Dictionary<string, string> Actions { get; set; }
         public string Url { get; set; }
         public string Name { get; set; }
-        //  public long Id { get; set; }
+        public long Id { get; set; }
         public string Endpoint { get; set; }
         public string AdditionalParms { get; set; }
         public bool Active { get; set; }

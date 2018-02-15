@@ -8,9 +8,9 @@ namespace XeGateway.Controllers
     {
          ISourceManager _sourceManager;
          ModelFactory _modelFactory;
-        public BaseAPIController()
+        public BaseAPIController(ISourceManager sourceManager)
         {
-            _sourceManager = new SourceManager();
+            _sourceManager = sourceManager;
         }
         protected ISourceManager TheSourceManager
         {

@@ -8,10 +8,10 @@ namespace XeGateway.App_Start
     /// </summary>
     public static class ServiceRegister
     {
-        private static readonly ISourceManager _sourceManager;
+       // private static readonly ISourceManager _sourceManager;
         static ServiceRegister()
         {
-            _sourceManager = new SourceManager();
+           // _sourceManager = sourceManager;
         }
         //TODO DI 
         public static void RegisterAll()

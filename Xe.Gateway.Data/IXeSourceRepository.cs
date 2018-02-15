@@ -10,5 +10,6 @@ namespace Xe.Gateway.data.Contract
         XeGatewaySource get(Int64 Id);
         IEnumerable<XeGatewaySource> getAll();
         void Remove(XeGatewaySource src);
+        void Update(XeGatewaySource src);
     }
 }

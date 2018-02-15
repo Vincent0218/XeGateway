@@ -1,4 +1,9 @@
 ﻿using System.Web.Http;
+using Unity;
+using Xe.Gateway.data.Contract;
+using XeGateway.ApplicationManager;
+using XeGateway.Data.EFRepository;
+using XeGateway.Ioc;
 
 namespace XeGateway
 {
@@ -7,6 +12,13 @@ namespace XeGateway
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
+
+            ///
+            var container = new UnityContainer();
+            container.RegisterType<ISourceManager, SourceManager>();
+            container.RegisterType<IUnitOfWork, UnitOfWork>();
+            container.RegisterType<SqlDBContext, SqlDBContext>();
+            config.DependencyResolver = new UnityResolver(container);
 
             // Web API routes
             config.MapHttpAttributeRoutes();

@@ -15,10 +15,10 @@ namespace XeGateway.ApplicationManager
         private readonly IUnitOfWork _unitOfWork;
 
 
-        //TODO DI For SqlDBContext
-        public SourceManager()
+        
+        public SourceManager(IUnitOfWork unitOfWork)
         {
-            _unitOfWork = new UnitOfWork(new SqlDBContext());
+            _unitOfWork = unitOfWork;//new UnitOfWork(new SqlDBContext());
         }
         public IEnumerable<XeGatewaySource> GetSource()
         {
@@ -29,6 +29,15 @@ namespace XeGateway.ApplicationManager
         {
             return _unitOfWork.XeSourceRepository.get(Id);
         }
+
+        public void UpdateSource(XeGatewaySource Update)
+        {
+            var source = _unitOfWork.XeSourceRepository.get(Update.Id);
+            source = Update;
+          
+            _unitOfWork.Compleate();
+        }
+
 
 
     }

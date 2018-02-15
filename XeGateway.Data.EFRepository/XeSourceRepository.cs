@@ -21,7 +21,7 @@ namespace XeGateway.Data.EFRepository
 
         public XeGatewaySource get(Int64 id)
         {
-            throw new NotImplementedException();
+           return _ctx.Source.SingleOrDefault(x => x.Id == id);
         }
 
         public IEnumerable<XeGatewaySource> getAll()
@@ -32,6 +32,11 @@ namespace XeGateway.Data.EFRepository
         public void Remove(XeGatewaySource src)
         {
             throw new NotImplementedException();
+        }
+        public void Update(XeGatewaySource src)
+        {
+           var Origenal=  _ctx.Source. SingleOrDefault(x => x.Id == src.Id);
+           Origenal = src;
         }
     }
 }
