@@ -24,7 +24,7 @@ namespace XeGateway.Controllers
         /// <summary>
         /// Get list of all Exchange providers ,currently getting all the sources could have restricted to just the active ones
         /// but this feels more flexible in design as the user can see source status ,  
-        /// We are not showing the function that user could preform on those sources if the are inactive 
+        /// Not showing the function (Action Uri) that user could preform on those sources if the are inactive 
         /// </summary>
         /// <returns></returns>
         [AllowAnonymous]
