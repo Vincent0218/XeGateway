@@ -22,7 +22,7 @@ namespace XeGateway.Data.EFRepository
 
         public XeGatewaySource Get(Int64 id)
         {
-           return _ctx.Source.SingleOrDefault(x => x.Id == id && x.Active == true);
+           return _ctx.Source.SingleOrDefault(x => x.Id == id);
         }
         public XeGatewaySource GetByName(string name)
         {
@@ -31,7 +31,7 @@ namespace XeGateway.Data.EFRepository
 
         public IEnumerable<XeGatewaySource> GetAll()
         {
-          return  _ctx.Source.Where(x=>x.Active==true).ToList();
+          return  _ctx.Source.ToList();
         }
 
         public void Remove(XeGatewaySource src)
@@ -40,7 +40,8 @@ namespace XeGateway.Data.EFRepository
         }
         public void Update(XeGatewaySource src)
         {
-            _ctx.Entry(src).State = EntityState.Modified;           
+            _ctx.Entry(src).State = EntityState.Modified;
+            
         }
     }
 }

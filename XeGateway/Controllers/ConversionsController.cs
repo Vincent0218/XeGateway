@@ -22,28 +22,25 @@ namespace XeGateway.Controllers
         }
 
         // GET: api/Exchange/XeSources/{SourceId}/Conversions/GetConversion
-        public HttpResponseMessage GetConversion(ConversionRequestModel req)
+        [HttpPost]
+        public HttpResponseMessage GetConversion(ConversionRequestModel request,Int64 sourceid)
         {
-            if (req == null)
+            if (request == null)
             {
                 return Request.CreateResponse(System.Net.HttpStatusCode.BadRequest);
             }
-            var source = TheSourceManager.GetSourceById(req.SourceId);
+            var source = TheSourceManager.GetSourceById(sourceid);
             if (source == null)
             {
                 return Request.CreateResponse(System.Net.HttpStatusCode.BadRequest);
             }
-
-            var conversionService = _serviceLocator.GetServiceByName(source.Name);
-            var response = conversionService.Convert(new XeGateWay.Domain.ConversionServiceRequest()
+            if (!source.Active)
             {
-                AdditionalParam = req.AdditionalParam,
-                Amount = req.Amount,
-                CurrencyCodeFrom = req.CurrencyCodeFrom,
-                CurrencyCodeTo = req.CurrencyCodeTo,
-                OnDate = req.OnDate
+                return Request.CreateResponse(System.Net.HttpStatusCode.MethodNotAllowed);
             }
-           );
+            var conversionService = _serviceLocator.GetServiceByName(source.Name);
+            var response = conversionService.Convert(TheModelFacctory.Parse(request));
+           
 
             return Request.CreateResponse(System.Net.HttpStatusCode.OK, TheModelFacctory.Create(response));
         }

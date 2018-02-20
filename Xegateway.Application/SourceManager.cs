@@ -14,7 +14,7 @@ namespace XeGateway.ApplicationManager
         private readonly IUnitOfWork _unitOfWork;
 
 
-        
+
         public SourceManager(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
@@ -35,7 +35,7 @@ namespace XeGateway.ApplicationManager
 
         public void AddSource(XeGatewaySource source)
         {
-             _unitOfWork.XeSourceRepository.Add(source);
+            _unitOfWork.XeSourceRepository.Add(source);
             _unitOfWork.Compleate();
         }
 
@@ -43,6 +43,7 @@ namespace XeGateway.ApplicationManager
         {
             _unitOfWork.XeSourceRepository.Update(update);
             _unitOfWork.Compleate();
+
         }
 
 

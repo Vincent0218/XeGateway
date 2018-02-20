@@ -28,6 +28,6 @@ namespace XeGateway.Models
             set { _OnDate = value; }
         }
 
-        public Int64 SourceId { get; set; }
+        
     }
 }

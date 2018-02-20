@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 using XeGateWay.Domain;
 using System.Web.Http.Routing;
 using System.Net.Http;
 
 namespace XeGateway.Models
 {
-    public class ModelFactory
+    internal class ModelFactory
     {
         UrlHelper _helper;
         public ModelFactory(HttpRequestMessage request)
@@ -16,7 +13,13 @@ namespace XeGateway.Models
             _helper = new UrlHelper(request);
         }
 
-        public XeGatewaySourceModel Create(XeGatewaySource Source)
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Source"></param>
+        /// <returns></returns>
+        internal XeGatewaySourceModel Create(XeGatewaySource Source)
         {
             Dictionary<string, string> _actions = new Dictionary<string, string>
             {
@@ -30,20 +33,42 @@ namespace XeGateway.Models
                 AdditionalParms = Source.AdditionalParms,
                 Endpoint = Source.Endpoint,
                 Name = Source.Name,
-                Actions = _actions,
+                Actions =  Source.Active? _actions: null,
                 Id = Source.Id
             };
         }
 
-        public ConversionResponseModel Create(ConversionServiceResponse req)
-        {
-            return new ConversionResponseModel()
-            {
 
+
+        internal ConversionServiceRequest Parse(ConversionRequestModel request)
+        {
+            return new ConversionServiceRequest()
+            {
+                AdditionalParam = request.AdditionalParam,
+                Amount = request.Amount,
+                CurrencyCodeFrom = request.CurrencyCodeFrom,
+                CurrencyCodeTo = request.CurrencyCodeTo,
+                OnDate = request.OnDate
             };
         }
 
-        public XeGatewaySource Parse(XeGatewaySourceModel SourceModel)
+        internal ConversionResponseModel Create(ConversionServiceResponse response)
+        {
+            return new ConversionResponseModel()
+            {
+                Amount = response.Amount,
+                CurrencyCodeFrom = response.CurrencyCodeFrom,
+                CurrencyCodeTo = response.CurrencyCodeTo,
+                OnDate = response.OnDate
+            };
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="SourceModel"></param>
+        /// <returns></returns>
+        internal XeGatewaySource Parse(XeGatewaySourceModel SourceModel)
         {
             return new XeGatewaySource()
             {

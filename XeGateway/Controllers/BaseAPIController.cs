@@ -20,7 +20,7 @@ namespace XeGateway.Controllers
             }
         }
 
-        protected ModelFactory TheModelFacctory
+        internal ModelFactory TheModelFacctory
         {
             get
             {

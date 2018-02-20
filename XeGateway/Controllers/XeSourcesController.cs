@@ -11,7 +11,7 @@ namespace XeGateway.Controllers
 
     [XeAuthorizeFilter]
     /// <summary>
-    /// Xe ( currency) Source // XE , Yahoo , seed this 
+    /// Xe ( currency) Source // XE , Yahoo  
     /// </summary>
     public class XeSourcesController : BaseAPIController
     {
@@ -22,7 +22,9 @@ namespace XeGateway.Controllers
         }
 
         /// <summary>
-        /// Get list of all Exchange providers 
+        /// Get list of all Exchange providers ,currently getting all the sources could have restricted to just the active ones
+        /// but this feels more flexible in design as the user can see source status ,  
+        /// We are not showing the function that user could preform on those sources if the are inactive 
         /// </summary>
         /// <returns></returns>
         [AllowAnonymous]
@@ -46,9 +48,7 @@ namespace XeGateway.Controllers
 
 
         /// <summary>
-        /// TODO
-        /// Create Should have Authantication  or could be done through script seed new data  , Create a new Source , Service provider for currency exchange rate , 
-        /// for now this in not allowed returning 405 
+        /// Not Allowed on resource
         /// </summary>
         /// <param name="value"></param>
         public HttpResponseMessage Post([FromBody]string value)
@@ -58,8 +58,7 @@ namespace XeGateway.Controllers
 
         /// <summary>
         /// TODO
-        /// Create Should have Authantication  or could be done through script seed new data  , Create a new Source , Service provider for currency exchange rate , 
-        /// for now this in not allowed returning 405 
+        
         /// </summary>
         /// <param name="sourceModel"></param>
         public HttpResponseMessage Put([FromBody]XeGatewaySourceModel sourceModel)
@@ -72,7 +71,6 @@ namespace XeGateway.Controllers
             
             var sourceUpated = TheModelFacctory.Parse(sourceModel);
             TheSourceManager.UpdateSource(sourceUpated);
-
             return Request.CreateResponse(System.Net.HttpStatusCode.OK);
         }
 
