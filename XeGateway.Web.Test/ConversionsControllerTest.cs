@@ -11,7 +11,7 @@ namespace XeGateway.Web.Test
     public class ConversionsControllerTest
     {
         [TestMethod]
-        public void GetConversionTestBadRequest()
+        public void GetConversionTest()
         {
             var serviceManager = MockRepository.Mock<ISourceManager>();
             var serviceLocator = MockRepository.Mock<IServiceLocator>();
