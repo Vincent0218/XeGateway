@@ -22,6 +22,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Resource", "Resource", "{32
 		..\..\..\..\Desktop\GetALL.jpg = ..\..\..\..\Desktop\GetALL.jpg
 		GetConversion.jpg = GetConversion.jpg
 		GetCurrencyCodes.jpg = GetCurrencyCodes.jpg
+		Update.jpg = Update.jpg
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xe.Gateway.ServiceInterface.Yahoo", "Xe.Gateway.ServiceInterface.Yahoo\Xe.Gateway.ServiceInterface.Yahoo.csproj", "{7DE73B04-C192-49FE-9326-8A7D2B90C1A0}"
