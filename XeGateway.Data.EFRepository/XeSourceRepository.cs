@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using Xe.Gateway.data.Contract;
 using XeGateWay.Domain;
@@ -39,8 +40,7 @@ namespace XeGateway.Data.EFRepository
         }
         public void Update(XeGatewaySource src)
         {
-           var Origenal=  _ctx.Source. SingleOrDefault(x => x.Id == src.Id);
-           Origenal = src;
+            _ctx.Entry(src).State = EntityState.Modified;           
         }
     }
 }

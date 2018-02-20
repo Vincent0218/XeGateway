@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
 namespace XeGateway.Models
 {
     public class ConversionRequestModel
@@ -11,7 +7,7 @@ namespace XeGateway.Models
         /// <summary>
         /// Additional Param , JSON this can be parsed by Service Integration With Different Sources 
         /// </summary>
-        public Dictionary<string, string> AdditionalParam { get; set; }
+        public String AdditionalParam { get; set; }
 
         public string CurrencyCodeFrom { get; set; }
         public string CurrencyCodeTo { get; set; }
@@ -31,5 +27,7 @@ namespace XeGateway.Models
 
             set { _OnDate = value; }
         }
+
+        public Int64 SourceId { get; set; }
     }
 }

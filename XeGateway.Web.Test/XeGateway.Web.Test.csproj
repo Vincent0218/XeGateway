@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9B83212B-16AF-4E8A-8F53-8343BF895BA4}</ProjectGuid>
+    <ProjectGuid>{1394FBF8-4700-4BC9-8D01-64177B416616}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>XeGateway.Application.Test</RootNamespace>
-    <AssemblyName>XeGateway.Application.Test</AssemblyName>
+    <RootNamespace>XeGateway.Web.Test</RootNamespace>
+    <AssemblyName>XeGateway.Web.Test</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -49,23 +49,33 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AuthanticationTest.cs" />
+    <Compile Include="ConversionsControllerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ServiceLocatorTest.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Xe.Gateway.Data\XeGateway.Contract.csproj">
-      <Project>{92AA9618-853B-486C-AFAB-6B1532751A27}</Project>
+      <Project>{92aa9618-853b-486c-afab-6b1532751a27}</Project>
       <Name>XeGateway.Contract</Name>
     </ProjectReference>
     <ProjectReference Include="..\Xegateway.Application\Xegateway.Application.csproj">
       <Project>{719a235e-f8cd-4729-9cfc-e63e1a0aa3cc}</Project>
       <Name>Xegateway.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XeGateWay.Domain\XeGateWay.Domain.csproj">
+      <Project>{BCDBAB7F-A011-4081-B42A-C9FB36AEC08F}</Project>
+      <Name>XeGateWay.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XeGateway\XeGateway.Web.csproj">
+      <Project>{05c1ea3e-5cc0-4c3c-891b-2718b44b0372}</Project>
+      <Name>XeGateway.Web</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

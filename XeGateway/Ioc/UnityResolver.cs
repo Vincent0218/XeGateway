@@ -14,7 +14,11 @@ namespace XeGateway.Ioc
 
         public UnityResolver(IUnityContainer container)
         {
-            this.container = container ?? throw new ArgumentNullException("container");
+            if (container == null)
+            {
+                throw new ArgumentNullException("container");
+            }
+            this.container = container;
         }
 
         public object GetService(Type serviceType)

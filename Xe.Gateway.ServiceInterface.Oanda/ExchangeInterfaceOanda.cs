@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using XeGateway.Data.Services;
+﻿using XeGateway.Data.Services;
 using XeGateWay.Domain;
 
 namespace Xe.Gateway.ServiceInterface.Oanda

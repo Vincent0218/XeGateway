@@ -5,13 +5,8 @@ namespace XeGateWay.Domain
 {
     public class ConversionServiceRequest
     {
-
-        public ConversionServiceRequest()
-        {
-            AdditionalParam = new Dictionary<string, string>();
-        }
-
-        public Dictionary<string,string> AdditionalParam { get; set; }
+        
+        public String AdditionalParam { get; set; }
 
         public string CurrencyCodeFrom { get; set; }
         public string CurrencyCodeTo { get; set; }

@@ -3,6 +3,7 @@ using XeGateway.Models;
 using System;
 using System.Collections.Generic;
 using XeGateway.ApplicationManager;
+using System.Net.Http;
 
 namespace XeGateway.Controllers
 {
@@ -13,17 +14,27 @@ namespace XeGateway.Controllers
     /// </summary>
     public class ConversionsController : BaseAPIController
     {
+       private IServiceLocator _serviceLocator;
 
-        public ConversionsController(ISourceManager sourceManager) : base(sourceManager)
+        public ConversionsController(ISourceManager sourceManager, IServiceLocator servicelocator) : base(sourceManager)
         {
-
+            _serviceLocator = servicelocator;
         }
 
         // GET: api/Exchange/XeSources/{SourceId}/Conversions/GetConversion
-        public ConversionResponseModel GetConversion(Int64 SourceId, ConversionRequestModel req)
+        public HttpResponseMessage GetConversion(ConversionRequestModel req)
         {
-            var source = TheSourceManager.GetSourceById(SourceId);
-            var conversionService = ServiceLocator.GetServiceByName(source.Name);
+            if (req == null)
+            {
+                return Request.CreateResponse(System.Net.HttpStatusCode.BadRequest);
+            }
+            var source = TheSourceManager.GetSourceById(req.SourceId);
+            if (source == null)
+            {
+                return Request.CreateResponse(System.Net.HttpStatusCode.BadRequest);
+            }
+
+            var conversionService = _serviceLocator.GetServiceByName(source.Name);
             var response = conversionService.Convert(new XeGateWay.Domain.ConversionServiceRequest()
             {
                 AdditionalParam = req.AdditionalParam,
@@ -32,8 +43,9 @@ namespace XeGateway.Controllers
                 CurrencyCodeTo = req.CurrencyCodeTo,
                 OnDate = req.OnDate
             }
-                     );
-            return TheModelFacctory.Create(response);
+           );
+
+            return Request.CreateResponse(System.Net.HttpStatusCode.OK, TheModelFacctory.Create(response));
         }
 
         // GET: api/Exchange/XeSources/{SourceId}/Conversions/GetCountryCodes

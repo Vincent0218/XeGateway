@@ -13,7 +13,8 @@ namespace XeGateway.Ioc
             var container = new UnityContainer();
             container.RegisterType<ISourceManager, SourceManager>();
             container.RegisterType<IUnitOfWork, UnitOfWork>();
-            container.RegisterType<SqlDBContext, SqlDBContext>();         
+            container.RegisterType<SqlDBContext, SqlDBContext>();
+            container.RegisterInstance<IServiceLocator>(ServiceLocator.Instance);
             config.DependencyResolver = new UnityResolver(container);
             return container;
         }

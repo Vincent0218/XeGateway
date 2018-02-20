@@ -4,11 +4,7 @@
     {
         public bool Authanticate(string UserName, string Password)
         {
-          if(UserName == "Paritosh" && Password == "password")
-            {
-                return true;
-            }
-            return false;
+            return true;
         }
     }
 }

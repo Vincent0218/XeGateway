@@ -19,9 +19,10 @@ namespace XeGateway
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             
             var sourceManager = unityContainer.Resolve<ISourceManager>();
+            var serviceLocator = unityContainer.Resolve<IServiceLocator>();
             // 
             //Cash Service  for Service lookup         
-            ServiceRegister.Register(sourceManager);
+            ServiceRegister.Register(sourceManager, serviceLocator);
             
         }
     }

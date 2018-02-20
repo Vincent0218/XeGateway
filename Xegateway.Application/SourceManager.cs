@@ -36,13 +36,12 @@ namespace XeGateway.ApplicationManager
         public void AddSource(XeGatewaySource source)
         {
              _unitOfWork.XeSourceRepository.Add(source);
+            _unitOfWork.Compleate();
         }
 
         public void UpdateSource(XeGatewaySource update)
         {
-            var source = _unitOfWork.XeSourceRepository.Get(update.Id);
-            source = update;
-          
+            _unitOfWork.XeSourceRepository.Update(update);
             _unitOfWork.Compleate();
         }
 

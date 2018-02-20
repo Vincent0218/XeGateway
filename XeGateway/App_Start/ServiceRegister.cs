@@ -14,7 +14,7 @@ namespace XeGateway.App_Start
     /// </summary>
     public static class ServiceRegister
     {
-        public static void Register(ISourceManager sourceManager)
+        public static void Register(ISourceManager sourceManager, IServiceLocator serviceLocator)
         {
 
             #region YahooServiceRegistery
@@ -31,7 +31,7 @@ namespace XeGateway.App_Start
                 });
 
             }
-            ServiceLocator.AddService((IXeService)Activator.CreateInstance(typeof(ExchangeInterfaceOanda)));
+            serviceLocator.AddService((IXeService)Activator.CreateInstance(typeof(ExchangeInterfaceYahoo)));
             #endregion
 
             #region OandaServiceRegistery
@@ -48,7 +48,7 @@ namespace XeGateway.App_Start
                 });
 
             }
-            ServiceLocator.AddService((IXeService)Activator.CreateInstance(typeof(ExchangeInterfaceOanda)));
+            serviceLocator.AddService((IXeService)Activator.CreateInstance(typeof(ExchangeInterfaceOanda)));
             #endregion
         }
     }

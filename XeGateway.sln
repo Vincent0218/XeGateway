@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.26430.15
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XeGateway.Web", "XeGateway\XeGateway.Web.csproj", "{05C1EA3E-5CC0-4C3C-891B-2718B44B0372}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XeGateway.Web.Tests", "XeGateway.Tests\XeGateway.Web.Tests.csproj", "{1DC83CDA-C6D1-4ABC-BA6F-C58278E00FE4}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XeGateway.Contract", "Xe.Gateway.Data\XeGateway.Contract.csproj", "{92AA9618-853B-486C-AFAB-6B1532751A27}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XeGateWay.Domain", "XeGateWay.Domain\XeGateWay.Domain.csproj", "{BCDBAB7F-A011-4081-B42A-C9FB36AEC08F}"
@@ -32,6 +30,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xegateway.Application", "Xe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XeGateway.Application.Test", "XeGateway.Application.Test\XeGateway.Application.Test.csproj", "{9B83212B-16AF-4E8A-8F53-8343BF895BA4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XeGateway.Web.Test", "XeGateway.Web.Test\XeGateway.Web.Test.csproj", "{1394FBF8-4700-4BC9-8D01-64177B416616}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,10 +42,6 @@ Global
 		{05C1EA3E-5CC0-4C3C-891B-2718B44B0372}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{05C1EA3E-5CC0-4C3C-891B-2718B44B0372}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{05C1EA3E-5CC0-4C3C-891B-2718B44B0372}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1DC83CDA-C6D1-4ABC-BA6F-C58278E00FE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1DC83CDA-C6D1-4ABC-BA6F-C58278E00FE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1DC83CDA-C6D1-4ABC-BA6F-C58278E00FE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1DC83CDA-C6D1-4ABC-BA6F-C58278E00FE4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{92AA9618-853B-486C-AFAB-6B1532751A27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{92AA9618-853B-486C-AFAB-6B1532751A27}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{92AA9618-853B-486C-AFAB-6B1532751A27}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -82,6 +78,10 @@ Global
 		{9B83212B-16AF-4E8A-8F53-8343BF895BA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B83212B-16AF-4E8A-8F53-8343BF895BA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B83212B-16AF-4E8A-8F53-8343BF895BA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1394FBF8-4700-4BC9-8D01-64177B416616}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1394FBF8-4700-4BC9-8D01-64177B416616}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1394FBF8-4700-4BC9-8D01-64177B416616}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1394FBF8-4700-4BC9-8D01-64177B416616}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
