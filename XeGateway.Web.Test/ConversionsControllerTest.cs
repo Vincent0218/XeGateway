@@ -20,11 +20,11 @@ namespace XeGateway.Web.Test
             {
                 Request = new HttpRequestMessage()
             };
-            var result1 = controller.GetConversion(null);
+            var result1 = controller.GetConversion(null,1);
             Assert.AreEqual(result1.StatusCode, System.Net.HttpStatusCode.BadRequest);
 
-            var result2 = controller.GetConversion(new Models.ConversionRequestModel());
-            serviceManager.AssertWasCalled(x => x.GetSourceById(0));
+            var result2 = controller.GetConversion(new Models.ConversionRequestModel(),1);
+            serviceManager.AssertWasCalled(x => x.GetSourceById(1));
         }
   
     }

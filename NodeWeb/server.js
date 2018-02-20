@@ -5,7 +5,7 @@ var app = express();
 
 app.get("/", function (req, res) {
     
-    res.send("Title: EJS");
+    res.send( "CurrencyCodeFrom: USD, CurrencyCodeTo: INR, Amount: 100,");
     
 });
 
