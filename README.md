@@ -1,8 +1,11 @@
 # XeGateway
 
-Initial Structure
+API Serves as a gateway for Currency Conversion services (Xe.com, yahoo, ) and could extend to support any other source in future,
 
-* DB access
-* API ( structure , functions , $ rate provider Pre congigured Source )
-*  data access Repository , To do add pre configured source in data access script , add script
-* service lookup (work to do )
+Language used : c# 
+Authentication  : basic
+Database : SQl Server, 
+Tools and framework :  ASP.net WEB API ,Entity Framework 6.0, unity DI , Rhino Mock , 
+
+
+ 
