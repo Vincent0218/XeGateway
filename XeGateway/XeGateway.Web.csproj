@@ -208,6 +208,7 @@
     <Compile Include="Controllers\BaseAPIController.cs" />
     <Compile Include="Controllers\ConversionsController.cs" />
     <Compile Include="Controllers\XeSourcesController.cs" />
+    <Compile Include="Filters\RequireHttpsFilter.cs" />
     <Compile Include="Filters\XeAuthorizeFilterAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

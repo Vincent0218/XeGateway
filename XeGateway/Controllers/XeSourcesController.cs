@@ -57,10 +57,11 @@ namespace XeGateway.Controllers
         }
 
         /// <summary>
-        /// TODO
-        
+        /// 
+
         /// </summary>
         /// <param name="sourceModel"></param>
+        [RequireHttpsFilter]
         public HttpResponseMessage Put([FromBody]XeGatewaySourceModel sourceModel)
         {
             var source = TheSourceManager.GetSourceById(sourceModel.Id);
